@@ -24,14 +24,21 @@ How to Install
 --------------------------------------------------------------------------------
 Installation via composer is easy:
 
-	composer require gears/pdf:*
-
-You will also need to add the following to your root ```composer.json``` file.
+ Add the following to your root ```composer.json``` file.
 
 	"scripts":
 	{
 		"post-install-cmd": ["PhantomInstaller\\Installer::installPhantomJS"],
 		"post-update-cmd": ["PhantomInstaller\\Installer::installPhantomJS"]
+	},
+	"repositories": [
+		{
+		    "type":"vcs",
+		    "url": "https://github.com/ddell003/pdf.git"
+		}
+    	],
+	"require":{
+		"ddell003/pdf": "dev-master"
 	}
 
 > DOCX: If you are going to be using the DOCX templating you will need to
